@@ -7,13 +7,13 @@ class Exercise001 {
   // we don't specify it in the code
   // https://docs.scala-lang.org/tour/basics.html
 
-  def capitalizeWord(word: String): String = ""
+  def capitalizeWord(word: String): String = word.capitalize
 
-  def generateInitials(firstName: String, lastName: String) = ""
+  def generateInitials(firstName: String, lastName: String) = firstName.substring(0,1).capitalize + "." + lastName.substring(0,1).capitalize
 
-  def addVat(initialPrice: Double, interestRate: Double) : Double = 0.0
+  def addVat(initialPrice: Double, interestRate: Double) : Double =((initialPrice*(1+interestRate/100))*100).round/100.toDouble
 
-  def reverse(sentence: String) : String = ""
+  def reverse(sentence: String) : String = sentence.reverse
 
   /**
    * Here we show using a Scala sequence which is a type of collection
@@ -23,8 +23,13 @@ class Exercise001 {
    * @return
    */
   def countLinuxUsers(users: Seq[User]): Int = {
-    // Add your code here
-    0
+
+    var numberOfUsers : Int =0;
+
+    if (users !=null)
+      numberOfUsers = users.count(_.osType.toUpperCase == "LINUX")
+
+    return numberOfUsers
   }
 
 }
