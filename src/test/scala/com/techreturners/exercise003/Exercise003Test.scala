@@ -6,15 +6,20 @@ class Exercise003Test extends AnyFlatSpec {
 
   val exercise003 = new Exercise003
 
-  "A mint ice cream" should "be correctly identified and the code returned" in {
+  "A mint ice cream" should "be correctly identified and the code returned" in{
     assert(exercise003.getIceCreamCode("Mint Chocolate Chip") == 3)
   }
 
-  "A Mango Sorbet ice cream" should "be correctly identified and the code returned" in {
+  "A Mango Sorbet ice cream" should "be correctly identified and the code returned" in{
     assert(exercise003.getIceCreamCode("Mango Sorbet") == 5)
   }
 
-  "All available flavours" should "be correctly returned" in {
+
+  "A Strawberry ice cream" should  "not be  identified and the code returned should be -1" in{
+    assert(exercise003.getIceCreamCode("Strawberry") == -1)
+  }
+
+  "All available flavours" should "be correctly returned" in{
 
     val flavours = Array("Pistachio",
       "Raspberry Ripple",
