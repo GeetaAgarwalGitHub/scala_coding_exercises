@@ -11,9 +11,8 @@ class Exercise004(var dateTime: LocalDateTime) {
   // You might need to default the time to be something like midnight
 
 
-  def getDateTimeWithGigaSecond: LocalDateTime = {
+  def getDateTimeWithGigaSecond: LocalDateTime =
     LocalDateTime.of(dateTime.getYear, dateTime.getMonth, dateTime.getDayOfMonth, dateTime.getHour, dateTime.getMinute, dateTime.getSecond, dateTime.getNano).plus(1000000000,ChronoUnit.SECONDS);
-  }
 
 
 
